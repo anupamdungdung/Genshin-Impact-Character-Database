@@ -1,12 +1,15 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import App from './App';
+import './styles/main.css'
+import Character from './Character';
+import CharacterInfoModal from './CharacterInfoModel';
+
 import reportWebVitals from './reportWebVitals';
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <Character/>
   </React.StrictMode>,
   document.getElementById('root')
 );

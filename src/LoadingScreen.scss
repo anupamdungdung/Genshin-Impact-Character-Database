@@ -1,0 +1,51 @@
+body {
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.logoContainer {
+    width: 500px;
+    
+   
+}
+
+.logoContainer .loaderImage {
+
+   
+    object-fit: contain;
+    animation: reveal 3s infinite ease-in-out;
+    
+
+}
+
+// div:last-of-type{
+//     width: 500px;
+//     animation: reveal 3s infinite ease-in-out;
+// }
+
+// div:last-of-type img{
+    
+//     // animation: slidein 7s infinite;
+// }
+
+
+@keyframes reveal {
+   0%{
+       opacity: 0;
+   }
+   40%{
+       opacity: 1;
+
+   }
+ 
+   60%{
+       opacity: 1;
+   }
+   100%{
+       opacity: 0;
+   }
+}
+

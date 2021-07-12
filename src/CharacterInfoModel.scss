@@ -1,0 +1,36 @@
+@import url('https://fonts.googleapis.com/css2?family=Balsamiq+Sans&family=Fredoka+One&display=swap');
+
+.detailsText {
+    font-family: 'Balsamiq Sans';
+    font-kerning: 4px;
+}
+
+.modalImage {
+    width: 200px;
+    height: 350px;
+
+}
+
+.fiveStars {
+    width: 90px;
+    object-fit: contain;
+}
+
+.modalButton {
+    background-color: #00CCCC;
+
+    &:hover {
+        background-color: #00CC99;
+
+    }
+}
+
+
+
+.content {
+    z-index: 1000;
+    padding: 30px;
+    background-color: rgba(0, 0, 0, 0.7);
+    
+
+}

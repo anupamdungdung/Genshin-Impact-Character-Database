@@ -3,7 +3,6 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import './styles/main.css'
 import Character from './Character';
-import CharacterInfoModal from './CharacterInfoModel';
 
 import reportWebVitals from './reportWebVitals';
 

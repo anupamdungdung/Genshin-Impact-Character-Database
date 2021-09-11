@@ -1,11 +1,14 @@
-import React, { useState } from 'react';
+import React, { useState ,useContext} from 'react';
 import ReactDom from 'react-dom';
 import fourStars from './assets/fourStars.png';
 import fiveStars from './assets/fiveStars.png';
 import './CharacterInfoModel.scss'
+import { CharacterData } from './Character';
 
-const CharacterInfoModal = ({ closeModal, toggleModal, name, image, title, birthday, weapon, rarity, vision }) => {
+const CharacterInfoModal = ({closeModal,toggleModal}) => {
 
+    const context=useContext(CharacterData);
+    
     if (!toggleModal) return null;
     else {
         return ReactDom.createPortal(
@@ -20,14 +23,14 @@ const CharacterInfoModal = ({ closeModal, toggleModal, name, image, title, birth
 
                         <div class="inline-block align-bottom bg-white rounded-lg text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle sm:max-w-lg sm:w-full">
                             <div class="bg-white px-4 pt-5 pb-4 sm:p-6 sm:pb-4 flex">
-                                <img src={image} className="modalImage rounded " alt="ModalImage"></img>
+                                <img src={context.imageUrl} className="modalImage rounded " alt="ModalImage"></img>
                                 <div className="col-span-6 mx-2.5">
-                                    <p className="mb-3 detailsText">{name}</p>
-                                    <p className="mb-3 detailsText">Title: {title}</p>
-                                    <p className="mb-3 detailsText">Rarity: {rarity == 4 ? <img className="fiveStars mt-3" src={fourStars} /> : <img className="fiveStars mt-3" src={fiveStars} />}</p>
-                                    <p className="mb-3 detailsText">Vision: {vision}</p>
-                                    <p className="mb-3 detailsText">Birthday: {birthday}</p>
-                                    <p className="mb-3 detailsText">Weapon: {weapon}</p>
+                                    <p className="mb-3 detailsText">{context.name}</p>
+                                    <p className="mb-3 detailsText">Title: {context.title}</p>
+                                    <p className="mb-3 detailsText">Rarity: {context.rarity == 4 ? <img className="fiveStars mt-3" src={fourStars} /> : <img className="fiveStars mt-3" src={fiveStars} />}</p>
+                                    <p className="mb-3 detailsText">Vision: {context.vision}</p>
+                                    <p className="mb-3 detailsText">Birthday: {context.birthday}</p>
+                                    <p className="mb-3 detailsText">Weapon: {context.weapon}</p>
                                 </div>
 
                             </div>

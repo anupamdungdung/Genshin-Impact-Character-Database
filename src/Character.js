@@ -1,10 +1,11 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, createContext } from 'react';
 import axios from 'axios';
 import './Character.scss';
 import PreLoader from './LoadingScreen';
 import CharacterCard from './CharacterCard';
 import Nav from './Nav';
 
+const CharacterData=createContext();
 
 const Character = (props) => {
 
@@ -35,8 +36,12 @@ const Character = (props) => {
 
     }, []);
 
+
     const characterCards = charactersList.map((character, i) => {
-        return <CharacterCard image={character.imageUrl} name={character.name} description={character.description} title={character.title} birthday={character.birthday} weapon={character.weapon} rarity={character.rarity} vision={character.vision}/>
+        return <CharacterData.Provider value={character}>
+            <CharacterCard />
+        </CharacterData.Provider>
+        
     });
 
     return <div className="body">
@@ -58,3 +63,4 @@ const Character = (props) => {
 }
 
 export default Character;
+export {CharacterData};
